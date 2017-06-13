@@ -1,2 +1,2 @@
-# TAMADOG - tamagotchi oriented programmation
+# TAMADOG - OOP tamagotchi ...
 OOP exercise including js / html / AJAX / php / JSON
