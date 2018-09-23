@@ -24,16 +24,16 @@ session_start();
         myButton.addEventListener("click",function (e){
           action = e.target.id; // we get the action to do
           currentNode = e.target.previousSibling;
-          while (currentNode.tagName != "SELECT") {
+          while (currentNode.tagName !== "SELECT") {
             currentNode = currentNode.previousSibling;
           } // we should have identified the concerned SELECT element
           mySelect = currentNode;
           var x = mySelect.selectedIndex;
-          arg = mySelect.getElementsByTagName("option")[x].value //now the argument for it
+          arg = mySelect.getElementsByTagName("option")[x].value; //now the argument for it
           // have the object do the action
           xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
               responseDiv.innerHTML = this.responseText;
             }
           };
@@ -49,7 +49,7 @@ session_start();
   <body>
 <?php
 include('Animal.class.php');
-// initialize an object
+// initializes an object
 $dog = new Animal();
 $dog->setName("CrocBlanc");
 $_SESSION["animal"] = $dog; // pass it to animalManager.php
